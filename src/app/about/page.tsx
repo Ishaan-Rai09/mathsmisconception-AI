@@ -39,7 +39,7 @@ const AboutPage = () => {
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gradient mb-4">About MathsClarity AI</h1>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto">
-            We're transforming mathematics education with cutting-edge AI technology, empowering students to learn from their misconceptions and develop a strong mathematical foundation.
+            We&apos;re transforming mathematics education with cutting-edge AI technology, empowering students to learn from their misconceptions and develop a strong mathematical foundation.
           </p>
         </div>
 

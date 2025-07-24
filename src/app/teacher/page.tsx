@@ -284,7 +284,7 @@ export default function TeacherDashboard() {
                         Misconception Types
                       </h2>
                       <div className="h-64">
-                        <Bar data={barChartData} options={barChartOptions as any} />
+                        <Bar data={barChartData} options={barChartOptions as Record<string, unknown>} />
                       </div>
                     </motion.div>
                   </div>

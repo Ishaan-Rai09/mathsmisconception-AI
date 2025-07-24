@@ -30,13 +30,15 @@ export default clerkMiddleware(async (auth, req) => {
   // Protect routes that require authentication
   if (isProtectedRoute(req)) {
     if (!userId) {
-      return auth.redirectToSignIn();
+      const signInUrl = new URL('/sign-in', req.url);
+      signInUrl.searchParams.set('redirect_url', req.url);
+      return NextResponse.redirect(signInUrl);
     }
   }
   
   // Check for teacher routes
   if (isTeacherRoute(req) && userId) {
-    const userRole = sessionClaims?.metadata?.role || "student";
+    const userRole = (sessionClaims as any)?.metadata?.role || "student";
     
     if (userRole !== "teacher") {
       return NextResponse.redirect(new URL("/dashboard", req.url));
